@@ -28,6 +28,7 @@
  - express-mongo-sanitize
  - express-async-handler
  - express-rate-limit
+ - express-validator
  - jsonwebtoken
  - bcryptjs
  - multer

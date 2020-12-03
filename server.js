@@ -14,6 +14,9 @@ const rateLimit = require("express-rate-limit");
 // Import error handler resource
 const errorHandler = require("./middlewares/errorHandler");
 
+// Import routers resource
+const authRoute = require("./routes/auth");
+
 // Config env path
 dotenv.config({ path: "./config/config.env" });
 
@@ -63,7 +66,8 @@ app.use(xss());
 // Prevent mongodb operator injection
 app.use(mongoSanitize());
 
-// Route resources
+// Mount routers
+app.use("/api/v2/auth", authRoute);
 
 app.use(errorHandler);
 
